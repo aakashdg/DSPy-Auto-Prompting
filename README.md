@@ -2,7 +2,7 @@
 
 > **Repository:** DSPy-based prompt optimization toolkit for agricultural advisory systems  
 > **Organization:** Digital Green - Farmer.CHAT  
-> **Last Updated:** January 2025
+> **Last Updated:** January 2026
 
 ## Table of Contents
 
@@ -289,6 +289,7 @@ Based on empirical testing:
 - Calibration consistency: Lower standard deviation
 - Parse success: Maintained or improved
 
+A lot of observed variance based on model.
 ---
 
 ## Installation
@@ -418,44 +419,44 @@ improved_results = test_improved_prompt(improvement_result, test_examples)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    DSPy OPTIMIZATION WORKFLOW                        │
+│                    DSPy OPTIMIZATION WORKFLOW                       │
 ├─────────────────────────────────────────────────────────────────────┤
-│                                                                      │
+│                                                                     │
 │  1. Define Signature                                                │
 │     ├─ Input/output fields                                          │
 │     ├─ Field descriptions                                           │
 │     └─ Task instructions (docstring)                                │
-│                           │                                          │
-│                           ▼                                          │
+│                           │                                         │
+│                           ▼                                         │
 │  2. Prepare Training Data                                           │
-│     ├─ Golden examples (human-validated)                           │
-│     ├─ Synthetic examples (model-generated)                        │
-│     └─ Stratified sampling (for diversity)                         │
-│                           │                                          │
-│                           ▼                                          │
+│     ├─ Golden examples (human-validated)                            │
+│     ├─ Synthetic examples (model-generated)                         │
+│     └─ Stratified sampling (for diversity)                          │ 
+│                           │                                         │
+│                           ▼                                         │
 │  3. Define Metric Function                                          │
-│     ├─ Binary (pass/fail) for DSPy optimizers                      │
-│     ├─ Continuous (0-1) for analysis                               │
-│     └─ Multi-dimensional (for comprehensive eval)                  │
-│                           │                                          │
-│                           ▼                                          │
+│     ├─ Binary (pass/fail) for DSPy optimizers                       │
+│     ├─ Continuous (0-1) for analysis                                │
+│     └─ Multi-dimensional (for comprehensive eval)                   │
+│                           │                                         │
+│                           ▼                                         │
 │  4. Select Optimizer                                                │
-│     ├─ BootstrapFewShot (demo selection)                           │
-│     ├─ MIPRO (instruction + demo)                                  │
-│     └─ RandomSearch (instruction variants)                         │
-│                           │                                          │
-│                           ▼                                          │
+│     ├─ BootstrapFewShot (demo selection)                            │
+│     ├─ MIPRO (instruction + demo)                                   │
+│     └─ RandomSearch (instruction variants)                          │
+│                           │                                         │
+│                           ▼                                         │
 │  5. Compile & Optimize                                              │
 │     ├─ Generate candidates                                          │
-│     ├─ Evaluate on validation set                                  │
-│     └─ Select best configuration                                   │
-│                           │                                          │
-│                           ▼                                          │
+│     ├─ Evaluate on validation set                                   │
+│     └─ Select best configuration                                    │
+│                           │                                         │
+│                           ▼                                         │
 │  6. Extract & Validate                                              │
-│     ├─ Extract optimized prompt                                    │
-│     ├─ Test on held-out set                                        │
-│     └─ Compare with baseline                                       │
-│                                                                      │
+│     ├─ Extract optimized prompt                                     │
+│     ├─ Test on held-out set                                         │
+│     └─ Compare with baseline                                        │
+│                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -685,20 +686,3 @@ Before submitting:
 This repository is maintained by Digital Green for internal use and external collaboration on agricultural advisory systems.
 
 ---
-
-## Contact
-
-**Maintainer**: Aakash  
-**Role**: Data Scientist, Digital Green  
-**Project**: Farmer.CHAT
-
-For questions, issues, or contributions:
-- Open a GitHub issue
-- Contact the Farmer.CHAT development team
-- Refer to internal documentation for team-specific guidelines
-
----
-
-**Last Updated**: January 2025  
-**Version**: 1.0  
-**Status**: Active Development
