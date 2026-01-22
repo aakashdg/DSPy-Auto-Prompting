@@ -24,36 +24,9 @@
 
 ### 1.1 Context
 
-Farmer.CHAT is an agricultural advisory system designed to help smallholder farmers in Bihar, India. The system uses a **stitching prompt** to convert structured agricultural facts (from various data sources) into natural, conversational responses.
+Farmer.CHAT is an agricultural advisory system designed to help smallholder farmers across the world. The system uses a **stitching prompt** to convert structured agricultural facts (from various data sources) into natural, conversational responses.
 
-### 1.2 The Stitching Pipeline
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                         FARMER.CHAT PIPELINE                                 │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  Farmer Query ──→ Query Router ──→ MCP Executor ──→ Response Compiler       │
-│       │                                │                    │                │
-│       │                                ▼                    ▼                │
-│       │                         [Parallel API Calls]   [Raw Facts]          │
-│       │                         - Weather API                │               │
-│       │                         - Soil API                   │               │
-│       │                         - Pest API                   ▼               │
-│       │                         - Crop Intel         ┌──────────────┐       │
-│       │                                              │  STITCHING   │       │
-│       └─────────────────────────────────────────────→│    PROMPT    │       │
-│                                                      │ (This is what│       │
-│                                                      │ we optimize) │       │
-│                                                      └──────┬───────┘       │
-│                                                             │               │
-│                                                             ▼               │
-│                                                    Conversational Response   │
-│                                                                              │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
-### 1.3 Problem Statement
+### 1.2 Problem Statement
 
 **Challenge:** The stitching prompt needs to:
 - Convert structured JSON facts into natural language
@@ -64,7 +37,7 @@ Farmer.CHAT is an agricultural advisory system designed to help smallholder farm
 
 **Question:** Can we use auto-prompting techniques (DSPy) to systematically improve this prompt beyond manual engineering?
 
-### 1.4 Success Metrics
+### 1.3 Success Metrics
 
 We evaluate responses on 6 dimensions (1-5 scale):
 
